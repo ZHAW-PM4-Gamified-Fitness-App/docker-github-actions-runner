@@ -3,12 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.base
-    image: pixlmint/github-runner-base:latest
+    image: ghcr.io/zhaw-pm4-gamified-fitness-app/github-runner-base:latest
   main:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pixlmint/github-runner:latest
+    image: ghcr.io/zhaw-pm4-gamified-fitness-app/github-runner:latest
     volumes:
       - ~/ZHAW/PM4/gamified-fitness:/workspace
     command: ["tail", "-f", "/dev/null"]

@@ -1,5 +1,5 @@
 # hadolint ignore=DL3007
-FROM pixlmint/github-runner-base:latest
+FROM ghcr.io/zhaw-pm4-gamified-fitness-app/github-runner-base:latest
 LABEL maintainer="myoung34@my.apsu.edu"
 
 ENV AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
