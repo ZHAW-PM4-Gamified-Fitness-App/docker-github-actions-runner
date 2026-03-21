@@ -110,6 +110,13 @@ function install_powershell() {
   ln -s /opt/powershell/pwsh /usr/bin/pwsh
 }
 
+function install_kustomize() {
+  local base_dir="$PWD"
+  cd /usr/local/bin
+  curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+  cd $base_dir
+}
+
 function install_tools() {
   local function_name
   # shellcheck source=/dev/null
