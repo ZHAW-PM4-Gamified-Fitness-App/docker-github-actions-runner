@@ -5,7 +5,7 @@ LABEL maintainer="myoung34@my.apsu.edu"
 ENV AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
 RUN mkdir -p /opt/hostedtoolcache
 
-ARG GH_RUNNER_VERSION="2.333.1"
+ARG GH_RUNNER_VERSION="2.334.0"
 
 ARG TARGETPLATFORM
 
@@ -17,7 +17,7 @@ COPY install_actions.sh /actions-runner
 RUN chmod +x /actions-runner/install_actions.sh \
   && /actions-runner/install_actions.sh ${GH_RUNNER_VERSION} ${TARGETPLATFORM} \
   && rm /actions-runner/install_actions.sh \
-  && chown runner /_work /actions-runner /opt/hostedtoolcache
+  && chown -R runner /_work /actions-runner /opt/hostedtoolcache
 
 COPY token.sh entrypoint.sh app_token.sh /
 RUN chmod +x /token.sh /entrypoint.sh /app_token.sh
